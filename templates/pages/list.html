@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Liste des mots de passe</title>
+</head>
+<body>
+    <h1>Liste des mots de passe</h1>
+    <ul>
+        {% for password in password %}
+        <li>
+            {{ password.site}} - {{ password.username}}
+        </li>
+        {% empty %}
+        <li>
+            Aucun mot de passe enregistré.
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'password-create ' %}">Ajouter un mot de passe</a>
+</body>
+</html>

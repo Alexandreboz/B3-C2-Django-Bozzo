@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter/Éditer un mot de passe</title>
+</head>
+<body>
+    <h1> {% if form.instance.pk %}Éditer{% else %}Ajouter{% endif %} un mot de passe</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type=" submit" value="Enregistrer">
+    </form>
+    <a href="{% url 'password-list' %}">Retour à la liste des mots de passe</a>
+</body>
+</html>
