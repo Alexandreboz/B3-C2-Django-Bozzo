@@ -16,7 +16,7 @@ class PasswordCreateView(CreateView):
 class PasswordUpdateView(UpdateView):
     model = Password
     fields = ['site', 'username', 'password']
-    template_name = 'password_app/password_from.html'
+    template_name = 'password_app/password_form.html'
     success_url = reverse_lazy('password-list')
 
 class PasswordDeleteView(DeleteView):
